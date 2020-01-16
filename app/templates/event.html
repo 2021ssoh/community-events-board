@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Community Events Board</title>
+    </head>
+    <body>
+      <h1>Community Events Board</h1>
+      <div class="event-list">
+        <ul>
+          {% for event in events %}
+            <li>{{ event.event_name }} - {{ event.event_date }} : {{ event.category }}, {{ event.cost }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <form method = "post" action = "/results">
+      <p>Tell me your event name!</p>
+      <input type = "text" name = "event_name"/>
+      <br>
+      <p>Tell me your event date!</p>
+      <input type = "date" name = "event_date"/>
+
+      <p>Tell me your event category!</p>
+      <input type = "radio" name = "category" value = "school">school<br>
+      <input type = "radio" name = "category" value = "personal">personal<br>
+      <input type = "radio" name = "category" value = "work">work<br>
+      <input type = "radio" name = "category" value = "service">service<br>
+
+      <p>Tell me how much it will cost</p>
+      <input type = "radio" name = "cost" value = "less than $5">less than $5<br>
+      <input type = "radio" name = "cost" value = "5< $ <10">5< $ >10<br>
+      <input type = "radio" name = "cost" value = "11< $ <30">11< $ <30<br>
+      <input type = "radio" name = "cost" value = "more than 30">more than 30<br>
+      <input type="submit" value="Submit">
+      </form>
+    </body>
+</html>

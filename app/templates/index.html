@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Community Events Board</title>
+    </head>
+    <body>
+      <h1>Community Events Board</h1>
+      <div class="event-list">
+        <ul>
+          {% for event in events %}
+            <li>{{ event.event_name }} - {{ event.event_date }} : {{ event.category }}, {{ event.cost }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- set up a form with a post method and results action -->
+      <form method = "post" action = "/results">
+      <!-- need event_name and event_date using two text input (bonus- use date) -->
+
+        <br>
+        <button><a href = "/input_event"> Home </a></button>
+        <button><a href = "/input_event"> Input event </a></button>
+        <button><a href = "/diff_category"> Filter by category </a></button>
+        <br>
+
+
+      </form>
+    </body>
+</html>
